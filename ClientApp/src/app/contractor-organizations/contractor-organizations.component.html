@@ -1,0 +1,75 @@
+<div id="bodyContent">
+  <div id="contractorHeaderRow">
+    <h3>{{cotitle}}</h3>
+    <button class="btn btn-link" (click)="modal.showModal()" id="createNewOrg">Create New Contractor Organization</button>
+  </div>
+  <div class="mt-2 table-responsive col-lg-12">
+    <table class="table-hover table-bordered">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-lg-3 col-sm-5 col-5">Contractor Organization Id</th>
+          <th class="col-lg-8 col-sm-5 col-5">Name</th>
+          <th class="col-lg-1 col-sm-2 col-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of listOfcontractors" class="d-flex">
+          <td class="col-lg-3 col-sm-5 col-5">{{data.ContractorOrgId}}</td>
+          <td class="col-lg-8 col-sm-5 col-5">{{data.Name}}</td>
+          <td class="col-lg-1 col-sm-2 col-2">
+            <a class="btn editLink" title="Edit Contractor"><i (click)="modal.showModal(data)" class="fas fa-pen"></i></a>
+            <a class="btn deleteLink" title="Delete Contractor"><i (click)="dmodal.showModal(data.Name)" class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex mt-2 justify-content-center">
+
+    <!--Pagination -->
+    <!-- <nav>
+      <ul class="pagination pagination-circle pg-purple mb-0">
+
+
+        <li class="page-item clearfix d-none d-md-block" (click)="firstPage()" [ngClass]="{disabled: activePage == 1}">
+          <a class="page-link">First</a>
+        </li>
+
+        <li class="page-item" (click)="previousPage($event)" [ngClass]="{disabled: activePage == 1}">
+          <a class="page-link" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+
+    
+        <li #pages *ngFor="let page of paginators | slice:firstVisiblePaginator:lastVisiblePaginator; let i = index"
+          class="page-item" [ngClass]="{active: i + firstVisiblePaginator + 1 == activePage}">
+          <a class="page-link waves-light" (click)="changePage($event)" mdbWavesEffect>{{page}}</a>
+        </li>
+
+
+
+   
+        <li class="page-item" (click)="nextPage($event)" [ngClass]="{disabled: activePage == numberOfPaginators}">
+          <a class="page-link" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+
+      
+        <li class="page-item clearfix d-none d-md-block" (click)="lastPage()" [ngClass]="{disabled: activePage == numberOfPaginators}">
+          <a class="page-link">Last</a>
+        </li>
+
+      </ul>
+    </nav> -->
+    <!--/Pagination -->
+
+  </div>
+
+  <app-update-contractor #modal></app-update-contractor>
+  <app-delete-contractor #dmodal></app-delete-contractor>
+</div>

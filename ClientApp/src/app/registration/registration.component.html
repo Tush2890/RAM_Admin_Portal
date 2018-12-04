@@ -1,0 +1,67 @@
+<div id="bodyContent">
+  <div class="col-lg-12">
+    <h2>App Registration</h2>
+    <form id="registrationForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mt-4">
+      <div class="col-lg-12 col-sm-12 row">
+        <div class="form-group col-lg-6 col-sm-12">
+          <label>App Name <span>&#42;</span></label>
+          <input type="text" formControlName="appName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.appName.errors }">
+          <div *ngIf="submitted && f.appName.errors" class="invalid-feedback">
+            <div *ngIf="f.appName.errors.required">App Name is required</div>
+          </div>
+        </div>
+        <div class="form-group col-lg-6 col-sm-12">
+          <label>Home Page Url <span>&#42;</span></label>
+          <input type="text" formControlName="url" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.url.errors }">
+          <div *ngIf="submitted && f.url.errors" class="invalid-feedback">
+            <div *ngIf="f.url.errors.required">Home Page Url is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-12 col-sm-12 row">
+        <div class="form-group col-lg-6 col-sm-12">
+          <label>Expires <span>&#42;</span></label>
+          <input type="text" formControlName="expiry" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.expiry.errors }">
+          <div *ngIf="submitted && f.expiry.errors" class="invalid-feedback">
+            <div *ngIf="f.expiry.errors.required">Expiry is required</div>
+          </div>
+        </div>
+        <div class="form-group col-lg-6 col-sm-12">
+          <label>App Registrations </label>
+          <input type="text" formControlName="appRegister" class="form-control">
+        </div>
+      </div>
+
+
+      <div class="col-lg-12 col-sm-12 row">
+        <div class="form-group col-lg-6 col-sm-12">
+          <label>RoleId </label>
+          <input type="text" formControlName="roleId" class="form-control">
+        </div>
+        <div class="form-group col-lg-6 col-sm-12">
+          <label>Contractor Id
+          </label>
+          <input type="text" formControlName="contractorId" class="form-control">
+        </div>
+      </div>
+
+
+      <div class="col-lg-12 col-sm-12 row">
+        <div class="form-group col-lg-6 col-sm-12">
+          <label>Secret Value </label>
+          <div class="row m-0 input-group">
+            <input type="text" formControlName="secretValue" class="form-control secretValueInput col-lg-10">
+            <button class="btn btn-primary ml-2 generateKey" (click)="generateSecretKey()">Generate Key</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success ml-3" type="submit">Register</button>
+        <button class="btn btn-default ml-2" (click)="registerForm.reset()">Clear</button>
+      </div>
+
+    </form>
+  </div>
+</div>

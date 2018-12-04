@@ -1,0 +1,41 @@
+div#contractorHeaderRow{
+    display: flex !important;
+}
+
+.table-bordered{
+    width:100%;
+}
+
+#createNewOrg{
+    margin-left:auto !important;
+    white-space: inherit;
+}
+
+.ml-custom{
+    margin-left: -20px;
+}
+
+h3{
+    padding: .375rem .75rem;
+}
+
+th, td{
+    padding-left: 1%;
+}
+
+a.btn{
+    color: #337ab7;  
+    padding:0;
+}
+
+a.deleteLink, a.addLink{
+    padding-left: .2rem;
+}
+
+
+@media(max-width:768px){
+    div.table-responsive{
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+}

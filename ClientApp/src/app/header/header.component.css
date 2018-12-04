@@ -1,0 +1,8 @@
+.dropdown:hover > .dropdown-menu {
+	display: block;
+}
+
+.navbar{
+	padding-bottom: 0.2rem !important;
+	padding-top: .1rem !important;
+}

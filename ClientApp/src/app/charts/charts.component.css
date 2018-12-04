@@ -1,0 +1,7 @@
+a.dx-link.dx-link-edit {
+      visibility: hidden;
+}
+
+tr[aria-expanded="true"] {
+      background: yellow !important;
+ }

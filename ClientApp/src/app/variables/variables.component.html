@@ -1,0 +1,24 @@
+<div class="content col-lg-12 mt-2">
+  <dx-data-grid #targetDataGrid [dataSource]="variables" keyExpr="ID" [showRowLines]="true" [showBorders]="true" [columnAutoWidth]="true"
+    (onCellPrepared)="cellPrepared($event)" (onEditorPreparing)="onEditorPreparing($event)" (onRowUpdating)="rowUpdating($event)">
+    <dxi-column dataField="VariableId" [visible]="false"></dxi-column>
+    <dxi-column dataField="Name"></dxi-column>
+    <dxi-column dataField="Color"></dxi-column>
+    <dxi-column dataField="DeviceType"></dxi-column>
+    <dxi-column dataField="MaxValue"></dxi-column>
+    <dxi-column dataField="MinValue"></dxi-column>
+    <dxi-column dataField="SeriesType"></dxi-column>
+    <dxi-column dataField="Unit"></dxi-column>
+    <dxi-column dataField="Description"></dxi-column>
+    <dxi-column dataField="VariableType"></dxi-column>
+    <dxi-column dataField="DataPointsSource"></dxi-column>
+    <dxo-load-panel [enabled]="true"></dxo-load-panel>
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager 
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[5, 10]"
+        [showInfo]="true">
+    </dxo-pager>
+    <dxo-editing mode="form" [allowUpdating]="true" [useIcons]="true"></dxo-editing>
+  </dx-data-grid>
+</div>

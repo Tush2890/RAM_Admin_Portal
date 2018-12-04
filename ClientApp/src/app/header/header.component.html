@@ -1,0 +1,38 @@
+<div id="header" *ngIf="_navBar.visible">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" routerLink="/RAMAdmin"><i class="fa fa-home"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contractors">Contractor Organizations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/AppRegistration">App Registration</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Chart Builder</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <a class="dropdown-item" routerLink="/charts">Charts</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/variables">Variables</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/boilers">Boilers</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);" (click)="signout();">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

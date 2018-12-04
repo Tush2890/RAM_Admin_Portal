@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~devextreme/dist/css/dx.common.css';
+@import '~devextreme/dist/css/dx.light.css';
+
+html, body { 
+    margin:0;
+    padding:0;
+    height:100%; 
+}
+
+#containerDiv{
+    min-height: 100%;
+    position:relative;
+    /* And one simple CSS rule for IE 6 and IE 5.5 : */
+    height:auto !important;
+}
+
+#bodyContent {
+    padding-bottom:60px;   /* Height of the footer */
+ }
